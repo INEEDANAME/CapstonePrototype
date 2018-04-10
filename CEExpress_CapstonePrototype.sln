@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2026
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CEExpress_CapstonePrototype", "CEExpress_CapstonePrototype\CEExpress_CapstonePrototype.csproj", "{B5735F0F-278C-4557-BDD3-A9FBD96F5CDA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CEExpress_CapstonePrototype.Tests", "CEExpress_CapstonePrototype.Tests\CEExpress_CapstonePrototype.Tests.csproj", "{94F85142-10D9-4A25-8052-069DC52B4145}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B5735F0F-278C-4557-BDD3-A9FBD96F5CDA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5735F0F-278C-4557-BDD3-A9FBD96F5CDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5735F0F-278C-4557-BDD3-A9FBD96F5CDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5735F0F-278C-4557-BDD3-A9FBD96F5CDA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{94F85142-10D9-4A25-8052-069DC52B4145}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94F85142-10D9-4A25-8052-069DC52B4145}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94F85142-10D9-4A25-8052-069DC52B4145}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94F85142-10D9-4A25-8052-069DC52B4145}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1DB6A9E7-34B2-4E7B-9868-42C2937AFB3B}
+	EndGlobalSection
+EndGlobal
