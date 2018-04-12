@@ -1,6 +1,10 @@
 ﻿body {
-    padding-top: 50px;
-    padding-bottom: 20px;
+    background: #fff;
+    font-family: "Calibri", Open Sans, arial, san-serif;
+    font-weight: normal;
+    font-size: 14px;
+    color: #4b4b4b;
+}
 }
 
 /* Set padding to keep content from hitting the edges */
