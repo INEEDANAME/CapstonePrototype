@@ -4,188 +4,188 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="CEExpressDBModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-  <EntityContainer Name="CEExpressDBModelStoreContainer">
-    <EntitySet Name="Clients" EntityType="CEExpressDBModel.Store.Clients" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Orders" EntityType="CEExpressDBModel.Store.Orders" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Reports" EntityType="CEExpressDBModel.Store.Reports" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Addresses" EntityType="CEExpressDBModel.Store.Addresses" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Shipments" EntityType="CEExpressDBModel.Store.Shipments" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Drivers" EntityType="CEExpressDBModel.Store.Drivers" store:Type="Tables" Schema="dbo" />
-    <AssociationSet Name="ClientOrder" Association="CEExpressDBModel.Store.ClientOrder">
-      <End Role="Client" EntitySet="Clients" />
-      <End Role="Order" EntitySet="Orders" />
-    </AssociationSet>
-    <AssociationSet Name="OrderShipment" Association="CEExpressDBModel.Store.OrderShipment">
-      <End Role="Order" EntitySet="Orders" />
-      <End Role="Shipment" EntitySet="Shipments" />
-    </AssociationSet>
-    <AssociationSet Name="ShipmentDriver" Association="CEExpressDBModel.Store.ShipmentDriver">
-      <End Role="Shipment" EntitySet="Shipments" />
-      <End Role="Driver" EntitySet="Drivers" />
-    </AssociationSet>
-    <AssociationSet Name="ClientAddress" Association="CEExpressDBModel.Store.ClientAddress">
-      <End Role="Client" EntitySet="Clients" />
-      <End Role="Address" EntitySet="Addresses" />
-    </AssociationSet>
-    <AssociationSet Name="ClientReport" Association="CEExpressDBModel.Store.ClientReport">
-      <End Role="Client" EntitySet="Clients" />
-      <End Role="Report" EntitySet="Reports" />
-    </AssociationSet>
-  </EntityContainer>
-  <EntityType Name="Clients">
-    <Key>
-      <PropertyRef Name="accountID" />
-    </Key>
-    <Property Name="accountID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="accountNumber" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="password" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="isManagment" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="name" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="percentageDiscount" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="phoneNumber" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="faxNumber" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="email" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="contactName" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="costCentre" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Address_addressID" Type="int" Nullable="false" />
-  </EntityType>
-  <EntityType Name="Orders">
-    <Key>
-      <PropertyRef Name="orderID" />
-    </Key>
-    <Property Name="orderID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="customerName" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="fulfilmentStatus" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="pickupAddress" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="vehicleType" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="destinationAddress" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="createdTime" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="readyTime" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="dispatchedTime" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="weight" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="numberOfPieces" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="serviceType" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="packageType" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="referenceNumber" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="bilableAddress" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="isRoundTrip" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="assignedDriverID" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Client_accountID" Type="int" Nullable="false" />
-    <Property Name="Shipment_shipmentID" Type="int" Nullable="false" />
-  </EntityType>
-  <EntityType Name="Reports">
-    <Key>
-      <PropertyRef Name="reportID" />
-    </Key>
-    <Property Name="reportID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="desiredTimeFrame" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="generatedDateTime" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="isContainingGraphs" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="isContainingCharts" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="title" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="customReportingConstraints" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="generatedBy" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="accountNumber" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="customerName" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="numberOfOrders" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="expenses" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="previousOrdersPlaced" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="numberOfClientOrdersPlaced" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="clientNames" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Client_accountID" Type="int" Nullable="false" />
-  </EntityType>
-  <EntityType Name="Addresses">
-    <Key>
-      <PropertyRef Name="addressID" />
-    </Key>
-    <Property Name="addressID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="street" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="postalCode" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="province" Type="nvarchar(max)" Nullable="false" />
-  </EntityType>
-  <EntityType Name="Shipments">
-    <Key>
-      <PropertyRef Name="shipmentID" />
-    </Key>
-    <Property Name="shipmentID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="driverNotes" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="paperWaybillNumber" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="pickedUpTime" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="confirmedTime" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="deliveryTime" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Driver_driverID" Type="int" Nullable="false" />
-  </EntityType>
-  <EntityType Name="Drivers">
-    <Key>
-      <PropertyRef Name="driverID" />
-    </Key>
-    <Property Name="driverID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="name" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="phoneNumber" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="currentLocation" Type="nvarchar(max)" Nullable="false" />
-  </EntityType>
-  <Association Name="ClientOrder">
-    <End Role="Client" Type="CEExpressDBModel.Store.Clients" Multiplicity="1" />
-    <End Role="Order" Type="CEExpressDBModel.Store.Orders" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Client">
-        <PropertyRef Name="accountID" />
-      </Principal>
-      <Dependent Role="Order">
-        <PropertyRef Name="Client_accountID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="OrderShipment">
-    <End Role="Order" Type="CEExpressDBModel.Store.Orders" Multiplicity="*" />
-    <End Role="Shipment" Type="CEExpressDBModel.Store.Shipments" Multiplicity="1" />
-    <ReferentialConstraint>
-      <Principal Role="Shipment">
-        <PropertyRef Name="shipmentID" />
-      </Principal>
-      <Dependent Role="Order">
-        <PropertyRef Name="Shipment_shipmentID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="ShipmentDriver">
-    <End Role="Shipment" Type="CEExpressDBModel.Store.Shipments" Multiplicity="*" />
-    <End Role="Driver" Type="CEExpressDBModel.Store.Drivers" Multiplicity="1" />
-    <ReferentialConstraint>
-      <Principal Role="Driver">
-        <PropertyRef Name="driverID" />
-      </Principal>
-      <Dependent Role="Shipment">
-        <PropertyRef Name="Driver_driverID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="ClientAddress">
-    <End Role="Client" Type="CEExpressDBModel.Store.Clients" Multiplicity="*" />
-    <End Role="Address" Type="CEExpressDBModel.Store.Addresses" Multiplicity="1" />
-    <ReferentialConstraint>
-      <Principal Role="Address">
-        <PropertyRef Name="addressID" />
-      </Principal>
-      <Dependent Role="Client">
-        <PropertyRef Name="Address_addressID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="ClientReport">
-    <End Role="Client" Type="CEExpressDBModel.Store.Clients" Multiplicity="1" />
-    <End Role="Report" Type="CEExpressDBModel.Store.Reports" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Client">
-        <PropertyRef Name="accountID" />
-      </Principal>
-      <Dependent Role="Report">
-        <PropertyRef Name="Client_accountID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-</Schema></edmx:StorageModels>
+    <Schema Namespace="CEExpressDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Addresses">
+          <Key>
+            <PropertyRef Name="addressID" />
+          </Key>
+          <Property Name="addressID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="street" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="postalCode" Type="nvarchar" MaxLength="6" Nullable="false" />
+          <Property Name="province" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Clients">
+          <Key>
+            <PropertyRef Name="accountID" />
+          </Key>
+          <Property Name="accountID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="accountNumber" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="password" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="isManagment" Type="bit" Nullable="false" />
+          <Property Name="name" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="percentageDiscount" Type="real" />
+          <Property Name="phoneNumber" Type="numeric" Precision="10" Scale="0" Nullable="false" />
+          <Property Name="faxNumber" Type="numeric" Precision="10" Scale="0" />
+          <Property Name="email" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="contactName" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="costCentre" Type="nvarchar" MaxLength="128" />
+          <Property Name="Address_addressID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Drivers">
+          <Key>
+            <PropertyRef Name="driverID" />
+          </Key>
+          <Property Name="driverID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="phoneNumber" Type="numeric" Precision="10" Scale="0" Nullable="false" />
+          <Property Name="currentLocation" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Orders">
+          <Key>
+            <PropertyRef Name="orderID" />
+          </Key>
+          <Property Name="orderID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="customerName" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="fulfilmentStatus" Type="nvarchar" MaxLength="15" Nullable="false" />
+          <Property Name="pickupAddress" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="vehicleType" Type="nvarchar" MaxLength="64" />
+          <Property Name="destinationAddress" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="createdTime" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+          <Property Name="readyTime" Type="time" Precision="7" Nullable="false" />
+          <Property Name="dispatchedTime" Type="time" Precision="7" />
+          <Property Name="weight" Type="real" Nullable="false" />
+          <Property Name="numberOfPieces" Type="int" Nullable="false" />
+          <Property Name="serviceType" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="packageType" Type="nvarchar" MaxLength="50" />
+          <Property Name="referenceNumber" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="bilableAddress" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="isRoundTrip" Type="bit" />
+          <Property Name="assignedDriverID" Type="int" />
+          <Property Name="Client_accountID" Type="int" Nullable="false" />
+          <Property Name="Shipment_shipmentID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Reports">
+          <Key>
+            <PropertyRef Name="reportID" />
+          </Key>
+          <Property Name="reportID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="desiredTimeFrame" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+          <Property Name="generatedDateTime" Type="time" Precision="7" Nullable="false" />
+          <Property Name="isContainingGraphs" Type="bit" Nullable="false" />
+          <Property Name="isContainingCharts" Type="bit" Nullable="false" />
+          <Property Name="title" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="customReportingConstraints" Type="nvarchar(max)" />
+          <Property Name="generatedBy" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="accountNumber" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="customerName" Type="nvarchar(max)" />
+          <Property Name="numberOfOrders" Type="int" />
+          <Property Name="expenses" Type="float" />
+          <Property Name="previousOrdersPlaced" Type="int" />
+          <Property Name="numberOfClientOrdersPlaced" Type="int" />
+          <Property Name="clientNames" Type="nvarchar(max)" />
+          <Property Name="Client_accountID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Shipments">
+          <Key>
+            <PropertyRef Name="shipmentID" />
+          </Key>
+          <Property Name="shipmentID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="driverNotes" Type="nvarchar(max)" />
+          <Property Name="paperWaybillNumber" Type="nvarchar" MaxLength="64" />
+          <Property Name="pickedUpTime" Type="timestamp" StoreGeneratedPattern="Computed" />
+          <Property Name="confirmedTime" Type="time" Precision="7" />
+          <Property Name="deliveryTime" Type="time" Precision="7" />
+          <Property Name="Driver_driverID" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_ClientAddress">
+          <End Role="Addresses" Type="Self.Addresses" Multiplicity="1" />
+          <End Role="Clients" Type="Self.Clients" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Addresses">
+              <PropertyRef Name="addressID" />
+            </Principal>
+            <Dependent Role="Clients">
+              <PropertyRef Name="Address_addressID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ClientOrder">
+          <End Role="Clients" Type="Self.Clients" Multiplicity="1" />
+          <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Clients">
+              <PropertyRef Name="accountID" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="Client_accountID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ClientReport">
+          <End Role="Clients" Type="Self.Clients" Multiplicity="1" />
+          <End Role="Reports" Type="Self.Reports" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Clients">
+              <PropertyRef Name="accountID" />
+            </Principal>
+            <Dependent Role="Reports">
+              <PropertyRef Name="Client_accountID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrderShipment">
+          <End Role="Shipments" Type="Self.Shipments" Multiplicity="1" />
+          <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Shipments">
+              <PropertyRef Name="shipmentID" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="Shipment_shipmentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ShipmentDriver">
+          <End Role="Drivers" Type="Self.Drivers" Multiplicity="1" />
+          <End Role="Shipments" Type="Self.Shipments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Drivers">
+              <PropertyRef Name="driverID" />
+            </Principal>
+            <Dependent Role="Shipments">
+              <PropertyRef Name="Driver_driverID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="CEExpressDBModelStoreContainer">
+          <EntitySet Name="Addresses" EntityType="Self.Addresses" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Clients" EntityType="Self.Clients" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Drivers" EntityType="Self.Drivers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Orders" EntityType="Self.Orders" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Reports" EntityType="Self.Reports" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Shipments" EntityType="Self.Shipments" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_ClientAddress" Association="Self.FK_ClientAddress">
+            <End Role="Addresses" EntitySet="Addresses" />
+            <End Role="Clients" EntitySet="Clients" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ClientOrder" Association="Self.FK_ClientOrder">
+            <End Role="Clients" EntitySet="Clients" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ClientReport" Association="Self.FK_ClientReport">
+            <End Role="Clients" EntitySet="Clients" />
+            <End Role="Reports" EntitySet="Reports" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrderShipment" Association="Self.FK_OrderShipment">
+            <End Role="Shipments" EntitySet="Shipments" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ShipmentDriver" Association="Self.FK_ShipmentDriver">
+            <End Role="Drivers" EntitySet="Drivers" />
+            <End Role="Shipments" EntitySet="Shipments" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="CEExpressDBModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
@@ -222,16 +222,16 @@
             <PropertyRef Name="accountID" />
           </Key>
           <Property Name="accountID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="accountNumber" Type="String" Nullable="false" />
-          <Property Name="password" Type="String" Nullable="false" />
+          <Property Name="accountNumber" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="password" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
           <Property Name="isManagment" Type="String" Nullable="false" />
-          <Property Name="name" Type="String" Nullable="false" />
-          <Property Name="percentageDiscount" Type="String" Nullable="false" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="percentageDiscount" Type="String" />
           <Property Name="phoneNumber" Type="String" Nullable="false" />
-          <Property Name="faxNumber" Type="String" Nullable="false" />
-          <Property Name="email" Type="String" Nullable="false" />
-          <Property Name="contactName" Type="String" Nullable="false" />
-          <Property Name="costCentre" Type="String" Nullable="false" />
+          <Property Name="faxNumber" Type="String" />
+          <Property Name="email" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="contactName" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="costCentre" Type="String" Unicode="true" FixedLength="false" MaxLength="128" />
           <NavigationProperty Name="Orders" Relationship="CEExpressDBModel.ClientOrder" FromRole="Client" ToRole="Order" />
           <NavigationProperty Name="Address" Relationship="CEExpressDBModel.ClientAddress" FromRole="Client" ToRole="Address" />
           <NavigationProperty Name="Reports" Relationship="CEExpressDBModel.ClientReport" FromRole="Client" ToRole="Report" />
@@ -241,22 +241,22 @@
             <PropertyRef Name="orderID" />
           </Key>
           <Property Name="orderID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="customerName" Type="String" Nullable="false" />
-          <Property Name="fulfilmentStatus" Type="String" Nullable="false" />
-          <Property Name="pickupAddress" Type="String" Nullable="false" />
-          <Property Name="vehicleType" Type="String" Nullable="false" />
-          <Property Name="destinationAddress" Type="String" Nullable="false" />
-          <Property Name="createdTime" Type="String" Nullable="false" />
+          <Property Name="customerName" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="fulfilmentStatus" Type="String" Nullable="false" MaxLength="15" Unicode="true" FixedLength="false" />
+          <Property Name="pickupAddress" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="vehicleType" Type="String" Unicode="true" FixedLength="false" MaxLength="64" />
+          <Property Name="destinationAddress" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="createdTime" Type="String" Nullable="false" MaxLength="8" FixedLength="true" />
           <Property Name="readyTime" Type="String" Nullable="false" />
-          <Property Name="dispatchedTime" Type="String" Nullable="false" />
+          <Property Name="dispatchedTime" Type="String" />
           <Property Name="weight" Type="String" Nullable="false" />
           <Property Name="numberOfPieces" Type="String" Nullable="false" />
-          <Property Name="serviceType" Type="String" Nullable="false" />
-          <Property Name="packageType" Type="String" Nullable="false" />
-          <Property Name="referenceNumber" Type="String" Nullable="false" />
-          <Property Name="bilableAddress" Type="String" Nullable="false" />
-          <Property Name="isRoundTrip" Type="String" Nullable="false" />
-          <Property Name="assignedDriverID" Type="String" Nullable="false" />
+          <Property Name="serviceType" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="packageType" Type="String" Unicode="true" FixedLength="false" MaxLength="50" />
+          <Property Name="referenceNumber" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="bilableAddress" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="isRoundTrip" Type="String" />
+          <Property Name="assignedDriverID" Type="String" />
           <NavigationProperty Name="Client" Relationship="CEExpressDBModel.ClientOrder" FromRole="Order" ToRole="Client" />
           <Property Name="Client_accountID" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Shipment" Relationship="CEExpressDBModel.OrderShipment" FromRole="Order" ToRole="Shipment" />
@@ -266,20 +266,20 @@
             <PropertyRef Name="reportID" />
           </Key>
           <Property Name="reportID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="desiredTimeFrame" Type="String" Nullable="false" />
+          <Property Name="desiredTimeFrame" Type="String" Nullable="false" MaxLength="8" FixedLength="true" />
           <Property Name="generatedDateTime" Type="String" Nullable="false" />
           <Property Name="isContainingGraphs" Type="String" Nullable="false" />
           <Property Name="isContainingCharts" Type="String" Nullable="false" />
-          <Property Name="title" Type="String" Nullable="false" />
-          <Property Name="customReportingConstraints" Type="String" Nullable="false" />
-          <Property Name="generatedBy" Type="String" Nullable="false" />
-          <Property Name="accountNumber" Type="String" Nullable="false" />
-          <Property Name="customerName" Type="String" Nullable="false" />
-          <Property Name="numberOfOrders" Type="String" Nullable="false" />
-          <Property Name="expenses" Type="String" Nullable="false" />
-          <Property Name="previousOrdersPlaced" Type="String" Nullable="false" />
-          <Property Name="numberOfClientOrdersPlaced" Type="String" Nullable="false" />
-          <Property Name="clientNames" Type="String" Nullable="false" />
+          <Property Name="title" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="customReportingConstraints" Type="String" Unicode="true" FixedLength="false" MaxLength="Max" />
+          <Property Name="generatedBy" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="accountNumber" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="customerName" Type="String" Unicode="true" FixedLength="false" MaxLength="Max" />
+          <Property Name="numberOfOrders" Type="String" />
+          <Property Name="expenses" Type="String" />
+          <Property Name="previousOrdersPlaced" Type="String" />
+          <Property Name="numberOfClientOrdersPlaced" Type="String" />
+          <Property Name="clientNames" Type="String" Unicode="true" FixedLength="false" MaxLength="Max" />
           <NavigationProperty Name="Client" Relationship="CEExpressDBModel.ClientReport" FromRole="Report" ToRole="Client" />
           <Property Name="Client_accountID" Type="Int32" Nullable="false" />
         </EntityType>
@@ -288,9 +288,9 @@
             <PropertyRef Name="addressID" />
           </Key>
           <Property Name="addressID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="street" Type="String" Nullable="false" />
-          <Property Name="postalCode" Type="String" Nullable="false" />
-          <Property Name="province" Type="String" Nullable="false" />
+          <Property Name="street" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="postalCode" Type="String" Nullable="false" MaxLength="6" Unicode="true" FixedLength="false" />
+          <Property Name="province" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
           <NavigationProperty Name="Client" Relationship="CEExpressDBModel.ClientAddress" FromRole="Address" ToRole="Client" />
         </EntityType>
         <EntityType Name="Shipment">
@@ -298,11 +298,11 @@
             <PropertyRef Name="shipmentID" />
           </Key>
           <Property Name="shipmentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="driverNotes" Type="String" Nullable="false" />
-          <Property Name="paperWaybillNumber" Type="String" Nullable="false" />
-          <Property Name="pickedUpTime" Type="String" Nullable="false" />
-          <Property Name="confirmedTime" Type="String" Nullable="false" />
-          <Property Name="deliveryTime" Type="String" Nullable="false" />
+          <Property Name="driverNotes" Type="String" Unicode="true" FixedLength="false" MaxLength="Max" />
+          <Property Name="paperWaybillNumber" Type="String" Unicode="true" FixedLength="false" MaxLength="64" />
+          <Property Name="pickedUpTime" Type="String" FixedLength="true" MaxLength="8" />
+          <Property Name="confirmedTime" Type="String" />
+          <Property Name="deliveryTime" Type="String" />
           <NavigationProperty Name="Order" Relationship="CEExpressDBModel.OrderShipment" FromRole="Shipment" ToRole="Order" />
           <NavigationProperty Name="Driver" Relationship="CEExpressDBModel.ShipmentDriver" FromRole="Shipment" ToRole="Driver" />
           <Property Name="Driver_driverID" Type="Int32" Nullable="false" />
@@ -312,9 +312,9 @@
             <PropertyRef Name="driverID" />
           </Key>
           <Property Name="driverID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="name" Type="String" Nullable="false" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
           <Property Name="phoneNumber" Type="String" Nullable="false" />
-          <Property Name="currentLocation" Type="String" Nullable="false" />
+          <Property Name="currentLocation" Type="String" Unicode="true" FixedLength="false" MaxLength="Max" />
           <NavigationProperty Name="Shipments" Relationship="CEExpressDBModel.ShipmentDriver" FromRole="Driver" ToRole="Shipment" />
         </EntityType>
         <Association Name="ClientOrder">
@@ -495,6 +495,7 @@
         <DesignerProperty Name="EnablePluralization" Value="True" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
         <DesignerProperty Name="UseLegacyProvider" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
       </DesignerInfoPropertySet>
     </edmx:Options>
     <!-- Diagram content (shape and connector positions) -->
