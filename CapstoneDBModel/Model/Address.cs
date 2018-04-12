@@ -14,11 +14,18 @@ namespace CapstoneDBModel.Model
     
     public partial class Address
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Address()
+        {
+            this.Clients = new HashSet<Client>();
+        }
+    
         public int addressID { get; set; }
         public string street { get; set; }
         public string postalCode { get; set; }
         public string province { get; set; }
     
-        public virtual Client Client { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Client> Clients { get; set; }
     }
 }

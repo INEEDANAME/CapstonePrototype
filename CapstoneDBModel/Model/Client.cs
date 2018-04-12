@@ -24,18 +24,19 @@ namespace CapstoneDBModel.Model
         public int accountID { get; set; }
         public string accountNumber { get; set; }
         public string password { get; set; }
-        public string isManagment { get; set; }
+        public bool isManagment { get; set; }
         public string name { get; set; }
-        public string percentageDiscount { get; set; }
-        public string phoneNumber { get; set; }
-        public string faxNumber { get; set; }
+        public Nullable<float> percentageDiscount { get; set; }
+        public decimal phoneNumber { get; set; }
+        public Nullable<decimal> faxNumber { get; set; }
         public string email { get; set; }
         public string contactName { get; set; }
         public string costCentre { get; set; }
+        public int Address_addressID { get; set; }
     
+        public virtual Address Address { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Order> Orders { get; set; }
-        public virtual Address Address { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Report> Reports { get; set; }
     }

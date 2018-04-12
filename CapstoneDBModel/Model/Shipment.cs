@@ -14,15 +14,22 @@ namespace CapstoneDBModel.Model
     
     public partial class Shipment
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Shipment()
+        {
+            this.Orders = new HashSet<Order>();
+        }
+    
         public int shipmentID { get; set; }
         public string driverNotes { get; set; }
         public string paperWaybillNumber { get; set; }
-        public string pickedUpTime { get; set; }
-        public string confirmedTime { get; set; }
-        public string deliveryTime { get; set; }
+        public byte[] pickedUpTime { get; set; }
+        public Nullable<System.TimeSpan> confirmedTime { get; set; }
+        public Nullable<System.TimeSpan> deliveryTime { get; set; }
         public int Driver_driverID { get; set; }
     
-        public virtual Order Order { get; set; }
         public virtual Driver Driver { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Order> Orders { get; set; }
     }
 }

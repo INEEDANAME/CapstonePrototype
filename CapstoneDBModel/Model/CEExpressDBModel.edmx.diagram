@@ -4,18 +4,18 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="06a48e44af3a490bba4e2b99e1e18bb9" Name="Diagram1" ZoomLevel="86" >
-        <EntityTypeShape EntityType="CEExpressDBModel.Client" Width="1.5" PointX="5.625" PointY="0.625" />
-        <EntityTypeShape EntityType="CEExpressDBModel.Order" Width="1.5" PointX="3" PointY="0.75" />
-        <EntityTypeShape EntityType="CEExpressDBModel.Report" Width="1.5" PointX="8.125" PointY="0.625" />
-        <EntityTypeShape EntityType="CEExpressDBModel.Address" Width="1.5" PointX="5.5" PointY="5.125" />
-        <EntityTypeShape EntityType="CEExpressDBModel.Shipment" Width="1.5" PointX="0.5" PointY="0.75" />
-        <EntityTypeShape EntityType="CEExpressDBModel.Driver" Width="1.5" PointX="0.5" PointY="4.125" />
-        <AssociationConnector Association="CEExpressDBModel.ClientOrder" />
-        <AssociationConnector Association="CEExpressDBModel.OrderShipment" />
-        <AssociationConnector Association="CEExpressDBModel.ShipmentDriver" />
-        <AssociationConnector Association="CEExpressDBModel.ClientAddress" />
-        <AssociationConnector Association="CEExpressDBModel.ClientReport" />
+      <Diagram DiagramId="b2656b246f5d4b378a2264273913e28f" Name="Diagram1">
+        <EntityTypeShape EntityType="CEExpressDBModel.Address" Width="1.5" PointX="0.75" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CEExpressDBModel.Client" Width="1.5" PointX="3" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CEExpressDBModel.Driver" Width="1.5" PointX="0.75" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CEExpressDBModel.Order" Width="1.5" PointX="5.25" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="CEExpressDBModel.Report" Width="1.5" PointX="5.25" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CEExpressDBModel.Shipment" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="CEExpressDBModel.FK_ClientAddress" ManuallyRouted="false" />
+        <AssociationConnector Association="CEExpressDBModel.FK_ClientOrder" ManuallyRouted="false" />
+        <AssociationConnector Association="CEExpressDBModel.FK_ClientReport" ManuallyRouted="false" />
+        <AssociationConnector Association="CEExpressDBModel.FK_ShipmentDriver" ManuallyRouted="false" />
+        <AssociationConnector Association="CEExpressDBModel.FK_OrderShipment" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

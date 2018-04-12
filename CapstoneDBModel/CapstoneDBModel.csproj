@@ -98,14 +98,14 @@
   <ItemGroup>
     <Content Include="Model\CEExpressDBModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>CEExpressDBModel.Context.cs</LastGenOutput>
       <DependentUpon>CEExpressDBModel.edmx</DependentUpon>
+      <LastGenOutput>CEExpressDBModel.Context.cs</LastGenOutput>
     </Content>
     <Content Include="Model\CEExpressDBModel.edmx.sql" />
     <Content Include="Model\CEExpressDBModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>CEExpressDBModel.cs</LastGenOutput>
       <DependentUpon>CEExpressDBModel.edmx</DependentUpon>
+      <LastGenOutput>CEExpressDBModel.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <ItemGroup>

@@ -197,7 +197,6 @@
     <Folder Include="App_Data\" />
     <Folder Include="Content\images\" />
     <Folder Include="Models\" />
-    <Folder Include="Views\Login\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

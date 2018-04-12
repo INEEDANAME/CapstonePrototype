@@ -20,18 +20,19 @@ namespace CapstoneDBModel.Model
         public string pickupAddress { get; set; }
         public string vehicleType { get; set; }
         public string destinationAddress { get; set; }
-        public string createdTime { get; set; }
-        public string readyTime { get; set; }
-        public string dispatchedTime { get; set; }
-        public string weight { get; set; }
-        public string numberOfPieces { get; set; }
+        public byte[] createdTime { get; set; }
+        public System.TimeSpan readyTime { get; set; }
+        public Nullable<System.TimeSpan> dispatchedTime { get; set; }
+        public float weight { get; set; }
+        public int numberOfPieces { get; set; }
         public string serviceType { get; set; }
         public string packageType { get; set; }
         public string referenceNumber { get; set; }
         public string bilableAddress { get; set; }
-        public string isRoundTrip { get; set; }
-        public string assignedDriverID { get; set; }
+        public Nullable<bool> isRoundTrip { get; set; }
+        public Nullable<int> assignedDriverID { get; set; }
         public int Client_accountID { get; set; }
+        public int Shipment_shipmentID { get; set; }
     
         public virtual Client Client { get; set; }
         public virtual Shipment Shipment { get; set; }

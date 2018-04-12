@@ -15,19 +15,19 @@ namespace CapstoneDBModel.Model
     public partial class Report
     {
         public int reportID { get; set; }
-        public string desiredTimeFrame { get; set; }
-        public string generatedDateTime { get; set; }
-        public string isContainingGraphs { get; set; }
-        public string isContainingCharts { get; set; }
+        public byte[] desiredTimeFrame { get; set; }
+        public System.TimeSpan generatedDateTime { get; set; }
+        public bool isContainingGraphs { get; set; }
+        public bool isContainingCharts { get; set; }
         public string title { get; set; }
         public string customReportingConstraints { get; set; }
         public string generatedBy { get; set; }
         public string accountNumber { get; set; }
         public string customerName { get; set; }
-        public string numberOfOrders { get; set; }
-        public string expenses { get; set; }
-        public string previousOrdersPlaced { get; set; }
-        public string numberOfClientOrdersPlaced { get; set; }
+        public Nullable<int> numberOfOrders { get; set; }
+        public Nullable<double> expenses { get; set; }
+        public Nullable<int> previousOrdersPlaced { get; set; }
+        public Nullable<int> numberOfClientOrdersPlaced { get; set; }
         public string clientNames { get; set; }
         public int Client_accountID { get; set; }
     

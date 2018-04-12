@@ -22,7 +22,7 @@ namespace CapstoneDBModel.Model
     
         public int driverID { get; set; }
         public string name { get; set; }
-        public string phoneNumber { get; set; }
+        public decimal phoneNumber { get; set; }
         public string currentLocation { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

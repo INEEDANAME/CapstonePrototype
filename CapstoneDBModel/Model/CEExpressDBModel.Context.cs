@@ -13,10 +13,10 @@ namespace CapstoneDBModel.Model
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class CEExpressDBModelContainer : DbContext
+    public partial class CEExpressDBEntities : DbContext
     {
-        public CEExpressDBModelContainer()
-            : base("name=CEExpressDBModelContainer")
+        public CEExpressDBEntities()
+            : base("name=CEExpressDBEntities")
         {
         }
     
@@ -25,11 +25,11 @@ namespace CapstoneDBModel.Model
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<Address> Addresses { get; set; }
         public virtual DbSet<Client> Clients { get; set; }
+        public virtual DbSet<Driver> Drivers { get; set; }
         public virtual DbSet<Order> Orders { get; set; }
         public virtual DbSet<Report> Reports { get; set; }
-        public virtual DbSet<Address> Addresses { get; set; }
         public virtual DbSet<Shipment> Shipments { get; set; }
-        public virtual DbSet<Driver> Drivers { get; set; }
     }
 }
