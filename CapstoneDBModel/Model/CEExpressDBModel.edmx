@@ -31,6 +31,22 @@
             <PropertyRef Name="orderID" />
           </Key>
           <Property Name="orderID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="customerName" Type="String" Nullable="false" />
+          <Property Name="fulfilmentStatus" Type="String" Nullable="false" />
+          <Property Name="pickupAddress" Type="String" Nullable="false" />
+          <Property Name="vehicleType" Type="String" Nullable="false" />
+          <Property Name="destinationAddress" Type="String" Nullable="false" />
+          <Property Name="createdTime" Type="String" Nullable="false" />
+          <Property Name="readyTime" Type="String" Nullable="false" />
+          <Property Name="dispatchedTime" Type="String" Nullable="false" />
+          <Property Name="weight" Type="String" Nullable="false" />
+          <Property Name="numberOfPieces" Type="String" Nullable="false" />
+          <Property Name="serviceType" Type="String" Nullable="false" />
+          <Property Name="packageType" Type="String" Nullable="false" />
+          <Property Name="referenceNumber" Type="String" Nullable="false" />
+          <Property Name="bilableAddress" Type="String" Nullable="false" />
+          <Property Name="isRoundTrip" Type="String" Nullable="false" />
+          <Property Name="assignedDriverID" Type="String" Nullable="false" />
         </EntityType>
         <EntityType Name="Report">
           <Key>
@@ -49,12 +65,20 @@
             <PropertyRef Name="shipmentID" />
           </Key>
           <Property Name="shipmentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="driverNotes" Type="String" Nullable="false" />
+          <Property Name="paperWaybillNumber" Type="String" Nullable="false" />
+          <Property Name="pickedUpTime" Type="String" Nullable="false" />
+          <Property Name="confirmedTime" Type="String" Nullable="false" />
+          <Property Name="deliveryTime" Type="String" Nullable="false" />
         </EntityType>
         <EntityType Name="Driver">
           <Key>
             <PropertyRef Name="driverID" />
           </Key>
           <Property Name="driverID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" Nullable="false" />
+          <Property Name="phoneNumber" Type="String" Nullable="false" />
+          <Property Name="currentLocation" Type="String" Nullable="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
