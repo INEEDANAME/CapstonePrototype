@@ -33,6 +33,8 @@ namespace CapstoneDBModel.Model
         public Nullable<int> assignedDriverID { get; set; }
         public int Client_accountID { get; set; }
         public int Shipment_shipmentID { get; set; }
+        public Nullable<int> ordersPlaced { get; set; }
+        public Nullable<int> ordersDelivered { get; set; }
     
         public virtual Client Client { get; set; }
         public virtual Shipment Shipment { get; set; }
