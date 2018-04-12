@@ -22,7 +22,7 @@ namespace CEExpress_CapstonePrototype.Controllers
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "Contacts Page";
 
             return View();
         }
