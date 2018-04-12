@@ -25,6 +25,16 @@
             <PropertyRef Name="accountID" />
           </Key>
           <Property Name="accountID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="accountNumber" Type="String" Nullable="false" />
+          <Property Name="password" Type="String" Nullable="false" />
+          <Property Name="isManagment" Type="String" Nullable="false" />
+          <Property Name="name" Type="String" Nullable="false" />
+          <Property Name="percentageDiscount" Type="String" Nullable="false" />
+          <Property Name="phoneNumber" Type="String" Nullable="false" />
+          <Property Name="faxNumber" Type="String" Nullable="false" />
+          <Property Name="email" Type="String" Nullable="false" />
+          <Property Name="contactName" Type="String" Nullable="false" />
+          <Property Name="costCentre" Type="String" Nullable="false" />
         </EntityType>
         <EntityType Name="Order">
           <Key>
@@ -37,12 +47,29 @@
             <PropertyRef Name="reportID" />
           </Key>
           <Property Name="reportID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="desiredTimeFrame" Type="String" Nullable="false" />
+          <Property Name="generatedDateTime" Type="String" Nullable="false" />
+          <Property Name="isContainingGraphs" Type="String" Nullable="false" />
+          <Property Name="isContainingCharts" Type="String" Nullable="false" />
+          <Property Name="title" Type="String" Nullable="false" />
+          <Property Name="customReportingConstraints" Type="String" Nullable="false" />
+          <Property Name="generatedBy" Type="String" Nullable="false" />
+          <Property Name="accountNumber" Type="String" Nullable="false" />
+          <Property Name="customerName" Type="String" Nullable="false" />
+          <Property Name="numberOfOrders" Type="String" Nullable="false" />
+          <Property Name="expenses" Type="String" Nullable="false" />
+          <Property Name="previousOrdersPlaced" Type="String" Nullable="false" />
+          <Property Name="numberOfClientOrdersPlaced" Type="String" Nullable="false" />
+          <Property Name="clientNames" Type="String" Nullable="false" />
         </EntityType>
         <EntityType Name="Address">
           <Key>
             <PropertyRef Name="addressID" />
           </Key>
           <Property Name="addressID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="street" Type="String" Nullable="false" />
+          <Property Name="postalCode" Type="String" Nullable="false" />
+          <Property Name="province" Type="String" Nullable="false" />
         </EntityType>
         <EntityType Name="Shipment">
           <Key>

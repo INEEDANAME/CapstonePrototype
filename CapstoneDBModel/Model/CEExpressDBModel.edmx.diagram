@@ -6,8 +6,8 @@
     <edmx:Diagrams>
       <Diagram DiagramId="06a48e44af3a490bba4e2b99e1e18bb9" Name="Diagram1" >
         <EntityTypeShape EntityType="CEExpressDBModel.Client" Width="1.5" PointX="5.625" PointY="2.875" />
-        <EntityTypeShape EntityType="CEExpressDBModel.Order" Width="1.5" PointX="3" PointY="1.5" />
-        <EntityTypeShape EntityType="CEExpressDBModel.Report" Width="1.5" PointX="8.125" PointY="2.375" />
+        <EntityTypeShape EntityType="CEExpressDBModel.Order" Width="1.5" PointX="3.125" PointY="2" />
+        <EntityTypeShape EntityType="CEExpressDBModel.Report" Width="1.5" PointX="7.875" PointY="1.25" />
         <EntityTypeShape EntityType="CEExpressDBModel.Address" Width="1.5" PointX="5.625" PointY="0.5" />
         <EntityTypeShape EntityType="CEExpressDBModel.Shipment" Width="1.5" PointX="0.5" PointY="0.75" />
         <EntityTypeShape EntityType="CEExpressDBModel.Driver" Width="1.5" PointX="0.5" PointY="3.5" />
