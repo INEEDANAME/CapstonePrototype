@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CEExpress_CapstonePrototype
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CEExpress_CapstonePrototype.Tests", "CEExpress_CapstonePrototype.Tests\CEExpress_CapstonePrototype.Tests.csproj", "{94F85142-10D9-4A25-8052-069DC52B4145}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapstoneDBModel", "CapstoneDBModel\CapstoneDBModel.csproj", "{78AB2DB2-0EFF-4080-BBC6-E9A5D667F5E8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{94F85142-10D9-4A25-8052-069DC52B4145}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{94F85142-10D9-4A25-8052-069DC52B4145}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{94F85142-10D9-4A25-8052-069DC52B4145}.Release|Any CPU.Build.0 = Release|Any CPU
+		{78AB2DB2-0EFF-4080-BBC6-E9A5D667F5E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78AB2DB2-0EFF-4080-BBC6-E9A5D667F5E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78AB2DB2-0EFF-4080-BBC6-E9A5D667F5E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78AB2DB2-0EFF-4080-BBC6-E9A5D667F5E8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
