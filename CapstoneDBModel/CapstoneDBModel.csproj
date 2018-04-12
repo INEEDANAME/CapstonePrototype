@@ -49,10 +49,38 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\Address.cs">
+      <DependentUpon>CEExpressDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\CEExpressDBModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CEExpressDBModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\CEExpressDBModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CEExpressDBModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Model\CEExpressDBModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CEExpressDBModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Client.cs">
+      <DependentUpon>CEExpressDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Driver.cs">
+      <DependentUpon>CEExpressDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Order.cs">
+      <DependentUpon>CEExpressDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Report.cs">
+      <DependentUpon>CEExpressDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Shipment.cs">
+      <DependentUpon>CEExpressDBModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -67,6 +95,21 @@
     </None>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Model\CEExpressDBModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>CEExpressDBModel.Context.cs</LastGenOutput>
+      <DependentUpon>CEExpressDBModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="Model\CEExpressDBModel.edmx.sql" />
+    <Content Include="Model\CEExpressDBModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>CEExpressDBModel.cs</LastGenOutput>
+      <DependentUpon>CEExpressDBModel.edmx</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
