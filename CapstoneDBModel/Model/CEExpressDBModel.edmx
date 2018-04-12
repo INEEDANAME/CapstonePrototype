@@ -19,6 +19,26 @@
           <EntitySet Name="Addresses" EntityType="CEExpressDBModel.Address" />
           <EntitySet Name="Shipments" EntityType="CEExpressDBModel.Shipment" />
           <EntitySet Name="Drivers" EntityType="CEExpressDBModel.Driver" />
+          <AssociationSet Name="ClientOrder" Association="CEExpressDBModel.ClientOrder">
+            <End Role="Client" EntitySet="Clients" />
+            <End Role="Order" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="OrderShipment" Association="CEExpressDBModel.OrderShipment">
+            <End Role="Order" EntitySet="Orders" />
+            <End Role="Shipment" EntitySet="Shipments" />
+          </AssociationSet>
+          <AssociationSet Name="ShipmentDriver" Association="CEExpressDBModel.ShipmentDriver">
+            <End Role="Shipment" EntitySet="Shipments" />
+            <End Role="Driver" EntitySet="Drivers" />
+          </AssociationSet>
+          <AssociationSet Name="ClientAddress" Association="CEExpressDBModel.ClientAddress">
+            <End Role="Client" EntitySet="Clients" />
+            <End Role="Address" EntitySet="Addresses" />
+          </AssociationSet>
+          <AssociationSet Name="ClientReport" Association="CEExpressDBModel.ClientReport">
+            <End Role="Client" EntitySet="Clients" />
+            <End Role="Report" EntitySet="Reports" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="Client">
           <Key>
@@ -35,6 +55,9 @@
           <Property Name="email" Type="String" Nullable="false" />
           <Property Name="contactName" Type="String" Nullable="false" />
           <Property Name="costCentre" Type="String" Nullable="false" />
+          <NavigationProperty Name="Orders" Relationship="CEExpressDBModel.ClientOrder" FromRole="Client" ToRole="Order" />
+          <NavigationProperty Name="Address" Relationship="CEExpressDBModel.ClientAddress" FromRole="Client" ToRole="Address" />
+          <NavigationProperty Name="Reports" Relationship="CEExpressDBModel.ClientReport" FromRole="Client" ToRole="Report" />
         </EntityType>
         <EntityType Name="Order">
           <Key>
@@ -57,6 +80,9 @@
           <Property Name="bilableAddress" Type="String" Nullable="false" />
           <Property Name="isRoundTrip" Type="String" Nullable="false" />
           <Property Name="assignedDriverID" Type="String" Nullable="false" />
+          <NavigationProperty Name="Client" Relationship="CEExpressDBModel.ClientOrder" FromRole="Order" ToRole="Client" />
+          <Property Name="Client_accountID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Shipment" Relationship="CEExpressDBModel.OrderShipment" FromRole="Order" ToRole="Shipment" />
         </EntityType>
         <EntityType Name="Report">
           <Key>
@@ -77,6 +103,8 @@
           <Property Name="previousOrdersPlaced" Type="String" Nullable="false" />
           <Property Name="numberOfClientOrdersPlaced" Type="String" Nullable="false" />
           <Property Name="clientNames" Type="String" Nullable="false" />
+          <NavigationProperty Name="Client" Relationship="CEExpressDBModel.ClientReport" FromRole="Report" ToRole="Client" />
+          <Property Name="Client_accountID" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="Address">
           <Key>
@@ -86,6 +114,7 @@
           <Property Name="street" Type="String" Nullable="false" />
           <Property Name="postalCode" Type="String" Nullable="false" />
           <Property Name="province" Type="String" Nullable="false" />
+          <NavigationProperty Name="Client" Relationship="CEExpressDBModel.ClientAddress" FromRole="Address" ToRole="Client" />
         </EntityType>
         <EntityType Name="Shipment">
           <Key>
@@ -97,6 +126,9 @@
           <Property Name="pickedUpTime" Type="String" Nullable="false" />
           <Property Name="confirmedTime" Type="String" Nullable="false" />
           <Property Name="deliveryTime" Type="String" Nullable="false" />
+          <NavigationProperty Name="Order" Relationship="CEExpressDBModel.OrderShipment" FromRole="Shipment" ToRole="Order" />
+          <NavigationProperty Name="Driver" Relationship="CEExpressDBModel.ShipmentDriver" FromRole="Shipment" ToRole="Driver" />
+          <Property Name="Driver_driverID" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="Driver">
           <Key>
@@ -106,7 +138,52 @@
           <Property Name="name" Type="String" Nullable="false" />
           <Property Name="phoneNumber" Type="String" Nullable="false" />
           <Property Name="currentLocation" Type="String" Nullable="false" />
+          <NavigationProperty Name="Shipments" Relationship="CEExpressDBModel.ShipmentDriver" FromRole="Driver" ToRole="Shipment" />
         </EntityType>
+        <Association Name="ClientOrder">
+          <End Type="CEExpressDBModel.Client" Role="Client" Multiplicity="1" />
+          <End Type="CEExpressDBModel.Order" Role="Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Client">
+              <PropertyRef Name="accountID" />
+            </Principal>
+            <Dependent Role="Order">
+              <PropertyRef Name="Client_accountID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="OrderShipment">
+          <End Type="CEExpressDBModel.Order" Role="Order" Multiplicity="1" />
+          <End Type="CEExpressDBModel.Shipment" Role="Shipment" Multiplicity="1" />
+        </Association>
+        <Association Name="ShipmentDriver">
+          <End Type="CEExpressDBModel.Shipment" Role="Shipment" Multiplicity="*" />
+          <End Type="CEExpressDBModel.Driver" Role="Driver" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="Driver">
+              <PropertyRef Name="driverID" />
+            </Principal>
+            <Dependent Role="Shipment">
+              <PropertyRef Name="Driver_driverID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ClientAddress">
+          <End Type="CEExpressDBModel.Client" Role="Client" Multiplicity="1" />
+          <End Type="CEExpressDBModel.Address" Role="Address" Multiplicity="1" />
+        </Association>
+        <Association Name="ClientReport">
+          <End Type="CEExpressDBModel.Client" Role="Client" Multiplicity="1" />
+          <End Type="CEExpressDBModel.Report" Role="Report" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Client">
+              <PropertyRef Name="accountID" />
+            </Principal>
+            <Dependent Role="Report">
+              <PropertyRef Name="Client_accountID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
