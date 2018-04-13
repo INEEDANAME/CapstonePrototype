@@ -16,9 +16,8 @@ namespace CEExpress_CapstonePrototype.Controllers
 
         // GET: Orders
         public ActionResult Index()
-        {
-            var orders = db.Orders.Include(o => o.Client).Include(o => o.Shipment);
-            return View(orders.ToList());
+        { 
+            return View(db.Orders.ToList());
         }
 
         // GET: Orders/Details/5

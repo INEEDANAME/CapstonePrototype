@@ -20,9 +20,9 @@ namespace CapstoneDBModel.Model
         public string pickupAddress { get; set; }
         public string vehicleType { get; set; }
         public string destinationAddress { get; set; }
-        public byte[] createdTime { get; set; }
+        public System.DateTime createdTime { get; set; }
         public System.TimeSpan readyTime { get; set; }
-        public Nullable<System.TimeSpan> dispatchedTime { get; set; }
+        public System.TimeSpan dispatchedTime { get; set; }
         public float weight { get; set; }
         public int numberOfPieces { get; set; }
         public string serviceType { get; set; }
@@ -33,8 +33,8 @@ namespace CapstoneDBModel.Model
         public Nullable<int> assignedDriverID { get; set; }
         public int Client_accountID { get; set; }
         public int Shipment_shipmentID { get; set; }
-        public Nullable<int> ordersPlaced { get; set; }
-        public Nullable<int> ordersDelivered { get; set; }
+        public int ordersPlaced { get; set; }
+        public int ordersDelivered { get; set; }
     
         public virtual Client Client { get; set; }
         public virtual Shipment Shipment { get; set; }

@@ -76,23 +76,23 @@
     <Property Name="customerName" Type="nvarchar(max)" Nullable="false" />
     <Property Name="fulfilmentStatus" Type="nvarchar" Nullable="false" MaxLength="15" />
     <Property Name="pickupAddress" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="vehicleType" Type="nvarchar" Nullable="true" MaxLength="64" />
+    <Property Name="vehicleType" Type="nvarchar" Nullable="false" MaxLength="64" />
     <Property Name="destinationAddress" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="createdTime" Type="binary" StoreGeneratedPattern="Computed" Nullable="false" MaxLength="8" />
+    <Property Name="createdTime" Type="datetime" StoreGeneratedPattern="Computed" Nullable="false" />
     <Property Name="readyTime" Type="time" Nullable="false" Precision="7" />
-    <Property Name="dispatchedTime" Type="time" Nullable="true" Precision="7" />
+    <Property Name="dispatchedTime" Type="time" Nullable="false" Precision="7" />
     <Property Name="weight" Type="real" Nullable="false" />
     <Property Name="numberOfPieces" Type="int" Nullable="false" />
     <Property Name="serviceType" Type="nvarchar" Nullable="false" MaxLength="50" />
-    <Property Name="packageType" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="packageType" Type="nvarchar" Nullable="false" MaxLength="50" />
     <Property Name="referenceNumber" Type="nvarchar" Nullable="false" MaxLength="50" />
-    <Property Name="bilableAddress" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="bilableAddress" Type="nvarchar(max)" Nullable="true" />
     <Property Name="isRoundTrip" Type="bit" Nullable="true" />
     <Property Name="assignedDriverID" Type="int" Nullable="true" />
     <Property Name="Client_accountID" Type="int" Nullable="false" />
     <Property Name="Shipment_shipmentID" Type="int" Nullable="false" />
-    <Property Name="ordersPlaced" Type="int" Nullable="true" />
-    <Property Name="ordersDelivered" Type="int" Nullable="true" />
+    <Property Name="ordersPlaced" Type="int" Nullable="false" />
+    <Property Name="ordersDelivered" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Reports">
     <Key>
@@ -239,25 +239,25 @@
           <Property Name="customerName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="fulfilmentStatus" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="pickupAddress" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="vehicleType" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Name="vehicleType" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="destinationAddress" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="createdTime" Type="Binary" MaxLength="8" FixedLength="true" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
-          <Property Name="readyTime" Type="Time" Nullable="false" Precision="7" />
-          <Property Name="dispatchedTime" Type="Time" Precision="7" />
+          <Property Name="createdTime" Type="DateTime" annotation:StoreGeneratedPattern="Computed" Nullable="false" />
+          <Property Name="readyTime" Type="Time" Precision="7" Nullable="false" />
+          <Property Name="dispatchedTime" Type="Time" Precision="7" Nullable="false" />
           <Property Name="weight" Type="Single" Nullable="false" />
           <Property Name="numberOfPieces" Type="Int32" Nullable="false" />
           <Property Name="serviceType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="packageType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="packageType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="referenceNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="bilableAddress" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="isRoundTrip" Type="Boolean" />
-          <Property Name="assignedDriverID" Type="Int32" />
+          <Property Name="bilableAddress" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="true" />
+          <Property Name="isRoundTrip" Type="Boolean" Nullable="true" />
+          <Property Name="assignedDriverID" Type="Int32" Nullable="true" />
           <Property Name="Client_accountID" Type="Int32" Nullable="false" />
           <Property Name="Shipment_shipmentID" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Client" Relationship="Self.FK_ClientOrder" FromRole="Orders" ToRole="Clients" />
           <NavigationProperty Name="Shipment" Relationship="Self.FK_OrderShipment" FromRole="Orders" ToRole="Shipments" />
-          <Property Name="ordersPlaced" Type="Int32" Nullable="true" />
-          <Property Name="ordersDelivered" Type="Int32" Nullable="true" />
+          <Property Name="ordersPlaced" Type="Int32" Nullable="false" />
+          <Property Name="ordersDelivered" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="Report">
           <Key>
