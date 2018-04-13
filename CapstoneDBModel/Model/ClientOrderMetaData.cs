@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 
 using System.ComponentModel.DataAnnotations;
-namespace CEExpress_CapstonePrototype.Models
+namespace CapstoneDBModel.Model
 {
     public class ClientOrderMetaData
     {
