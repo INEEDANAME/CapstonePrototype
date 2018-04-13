@@ -1,48 +1,20 @@
 ﻿@model IEnumerable<CapstoneDBModel.Model.Order>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Current Orders";
 }
 
 <h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
 </p>
 <table class="table table-striped" style="background-color:powderblue;">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.customerName)
+            @Html.DisplayNameFor(model => model.orderID)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.fulfilmentStatus)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.pickupAddress)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.vehicleType)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.destinationAddress)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.createdTime)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.readyTime)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.dispatchedTime)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.weight)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.numberOfPieces)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.serviceType)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.packageType)
@@ -50,58 +22,16 @@
         <th>
             @Html.DisplayNameFor(model => model.referenceNumber)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.bilableAddress)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.isRoundTrip)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.assignedDriverID)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Client.accountNumber)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Shipment.driverNotes)
-        </th>
         <th></th>
     </tr>
 
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.customerName)
+            @Html.DisplayFor(modelItem => item.orderID)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.fulfilmentStatus)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.pickupAddress)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.vehicleType)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.destinationAddress)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.createdTime)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.readyTime)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.dispatchedTime)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.weight)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.numberOfPieces)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.serviceType)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.packageType)
@@ -109,25 +39,9 @@
         <td>
             @Html.DisplayFor(modelItem => item.referenceNumber)
         </td>
+
         <td>
-            @Html.DisplayFor(modelItem => item.bilableAddress)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.isRoundTrip)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.assignedDriverID)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Client.accountNumber)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Shipment.driverNotes)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.orderID }) |
             @Html.ActionLink("Details", "Details", new { id=item.orderID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.orderID })
         </td>
     </tr>
 }

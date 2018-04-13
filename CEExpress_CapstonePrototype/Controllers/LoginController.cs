@@ -9,12 +9,7 @@ namespace CEExpress_CapstonePrototype.Controllers
 {
     public class LoginController : Controller
     {
-        // GET: Login
-        public ActionResult Index()
-        {
-            return View();
-        }
-
+  
         public ActionResult Login()
         {
             return View();
@@ -30,12 +25,12 @@ namespace CEExpress_CapstonePrototype.Controllers
                 if (response.IsSuccessStatusCode)
                 {
                     ViewBag.Message = "Success";
-                    return View();
-                
-                }
+                    return RedirectToAction("Index", "Orders");
+
+            }
                 else
                     ViewBag.Message = "Failed";
-                    return View();
+                    return RedirectToAction("Index", "Home");
         }
 
         

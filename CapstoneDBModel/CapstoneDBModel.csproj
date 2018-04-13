@@ -70,6 +70,8 @@
     <Compile Include="Model\Client.cs">
       <DependentUpon>CEExpressDBModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Model\ClientOrderMetaData.cs" />
+    <Compile Include="Model\ClientOrderPartialClass.cs" />
     <Compile Include="Model\Driver.cs">
       <DependentUpon>CEExpressDBModel.tt</DependentUpon>
     </Compile>
