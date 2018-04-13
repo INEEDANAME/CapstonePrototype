@@ -7,7 +7,12 @@
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
     <style  >
-        
+        .navbar-collapse .nav li:hover {
+            background: #fc8f38;
+        }
+            
+      
+        }
 
     </style>
 </head>
@@ -18,7 +23,7 @@
                 <div class="navbar-header" style="display:block; text-transform: uppercase;text-decoration: none; 	border-bottom:1px solid #e8e8e8;
 ;" ;
 
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" >
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
@@ -30,7 +35,7 @@
 
             </div>
                 <div class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav">
+                    <ul class="nav navbar-nav" id="navigation">
                         <li>@Html.ActionLink("Home", "Index", "Home")</li>
                         <li>@Html.ActionLink("Account", "", "")</li>
                         <li>@Html.ActionLink("Your Orders", "Index", "Orders")</li>
@@ -53,5 +58,13 @@
         @Scripts.Render("~/bundles/jquery")
         @Scripts.Render("~/bundles/bootstrap")
         @RenderSection("scripts", required: false)
+
+        
+        </div>
+        </div>
+
+        </header>
 </body>
+
+    
 </html>

@@ -4,12 +4,23 @@
     ViewBag.Title = "Details";
 }
 
+<head>
+
+    <style>
+
+        dt {
+            color: #f1913e;
+        }
+
+    </style>
+</head>
+
 <h2>Details</h2>
 
 <div>
     <h4>Order</h4>
     <hr />
-    <dl class="dl-horizontal">
+    <dl class="dl-horizontal table-striped" style="background-color:powderblue;" > 
         <dt>
             @Html.DisplayNameFor(model => model.customerName)
         </dt>
