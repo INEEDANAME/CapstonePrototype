@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 04/12/2018 16:44:30
+-- Date Created: 04/12/2018 22:56:52
 -- Generated from EDMX file: C:\Users\Dylan\source\repos\CEExpress_CapstonePrototype\CapstoneDBModel\Model\CEExpressDBModel.edmx
 -- --------------------------------------------------
 
@@ -20,14 +20,8 @@ GO
 IF OBJECT_ID(N'[dbo].[FK_ClientAddress]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[Clients] DROP CONSTRAINT [FK_ClientAddress];
 GO
-IF OBJECT_ID(N'[dbo].[FK_ClientOrder]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[Orders] DROP CONSTRAINT [FK_ClientOrder];
-GO
 IF OBJECT_ID(N'[dbo].[FK_ClientReport]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[Reports] DROP CONSTRAINT [FK_ClientReport];
-GO
-IF OBJECT_ID(N'[dbo].[FK_OrderShipment]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[Orders] DROP CONSTRAINT [FK_OrderShipment];
 GO
 IF OBJECT_ID(N'[dbo].[FK_ShipmentDriver]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[Shipments] DROP CONSTRAINT [FK_ShipmentDriver];
@@ -46,14 +40,14 @@ GO
 IF OBJECT_ID(N'[dbo].[Drivers]', 'U') IS NOT NULL
     DROP TABLE [dbo].[Drivers];
 GO
-IF OBJECT_ID(N'[dbo].[Orders]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[Orders];
-GO
 IF OBJECT_ID(N'[dbo].[Reports]', 'U') IS NOT NULL
     DROP TABLE [dbo].[Reports];
 GO
 IF OBJECT_ID(N'[dbo].[Shipments]', 'U') IS NOT NULL
     DROP TABLE [dbo].[Shipments];
+GO
+IF OBJECT_ID(N'[CEExpressDBModelStoreContainer].[Orders]', 'U') IS NOT NULL
+    DROP TABLE [CEExpressDBModelStoreContainer].[Orders];
 GO
 
 -- --------------------------------------------------
@@ -101,23 +95,23 @@ CREATE TABLE [dbo].[Orders] (
     [customerName] nvarchar(max)  NOT NULL,
     [fulfilmentStatus] nvarchar(15)  NOT NULL,
     [pickupAddress] nvarchar(max)  NOT NULL,
-    [vehicleType] nvarchar(64)  NULL,
+    [vehicleType] nvarchar(64)  NOT NULL,
     [destinationAddress] nvarchar(max)  NOT NULL,
-    [createdTime] binary(8)  NOT NULL,
+    [createdTime] datetime  NOT NULL,
     [readyTime] time  NOT NULL,
-    [dispatchedTime] time  NULL,
+    [dispatchedTime] time  NOT NULL,
     [weight] real  NOT NULL,
     [numberOfPieces] int  NOT NULL,
     [serviceType] nvarchar(50)  NOT NULL,
-    [packageType] nvarchar(50)  NULL,
+    [packageType] nvarchar(50)  NOT NULL,
     [referenceNumber] nvarchar(50)  NOT NULL,
-    [bilableAddress] nvarchar(max)  NOT NULL,
+    [bilableAddress] nvarchar(max)  NULL,
     [isRoundTrip] bit  NULL,
     [assignedDriverID] int  NULL,
     [Client_accountID] int  NOT NULL,
     [Shipment_shipmentID] int  NOT NULL,
-    [ordersPlaced] int  NULL,
-    [ordersDelivered] int  NULL
+    [ordersPlaced] int  NOT NULL,
+    [ordersDelivered] int  NOT NULL
 );
 GO
 

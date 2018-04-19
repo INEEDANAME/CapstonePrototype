@@ -6,35 +6,65 @@
     <title>@ViewBag.Title - C&amp;E Express - Capstone</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    <style  >
+        .navbar-collapse .nav li:hover {
+            background: #fc8f38;
+        }
+            
+      
+        }
+
+    </style>
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+    <header>
+        <div class="navbar navbar-inverse navbar-fixed-top" style="background:#11147f">
+            <div class="container">
+                <div class="navbar-header" style="display:block; text-transform: uppercase;text-decoration: none; 	border-bottom:1px solid #e8e8e8;
+;" ;
+
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" >
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Capstone Prototype", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                <div id="pic">
+                    @Html.ActionLink("Capstone Prototype", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                </div>
+
+
             </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                </ul>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav" id="navigation">
+                        <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                        <li>@Html.ActionLink("Account", "", "")</li>
+                        <li>@Html.ActionLink("Your Orders", "Index", "Orders")</li>
+                        <li>@Html.ActionLink("LogIn", "Login", "Login")</li>
+
+                        <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                        <li>@Html.ActionLink("About us", "About", "Home")</li>
+                    </ul>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - C&amp;E Express - Capstone Prototype</p>
-        </footer>
-    </div>
+        <div class="container body-content">
+            @RenderBody()
+            <hr /><br /> <br /> <br /> <br /> <br />
+            @*<footer>
+                <p >&copy; @DateTime.Now.Year - C&amp;E Express - Capstone Prototype</p>
+            </footer>*@
+        </div>
 
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")
+        @RenderSection("scripts", required: false)
+
+        
+        </div>
+        </div>
+
+        </header>
 </body>
+
+    
 </html>
