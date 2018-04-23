@@ -14,6 +14,17 @@
 </head>
 <center>
 
+    Welcome @HttpContext.Current.User.Identity.Name
+
+    @if (Request.IsAuthenticated)
+    {
+        using (Html.BeginForm("Logout", "Clients", FormMethod.Post, new { id = "logoutForm" }))
+        {
+            <a href = "javascript:document.getElementById('logoutForm').submit()">Logout</a>
+        }
+    }
+
+
     <div class="jumbotron">
         <h1><img src="~/Content/images/logo.png" />   Capstone Portal Prototype</h1>
         <p>

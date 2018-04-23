@@ -1,0 +1,106 @@
+﻿@model CapstoneDBModel.Model.Client
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Client</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.accountNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.accountNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.password)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.password)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.isManagment)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.isManagment)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.percentageDiscount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.percentageDiscount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.phoneNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.phoneNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.faxNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.faxNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.contactName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.contactName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.costCentre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.costCentre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Address.street)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Address.street)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.accountID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
