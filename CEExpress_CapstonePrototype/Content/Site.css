@@ -26,3 +26,9 @@ select,
 textarea {
     max-width: 280px;
 }
+
+img.prototype {
+    width: 1024px;
+    height: 768px;
+    margin: auto;
+}

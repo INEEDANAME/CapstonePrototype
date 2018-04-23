@@ -46,7 +46,7 @@ namespace CEExpress_CapstonePrototype.Controllers
                         }
                         else
                         {
-                            return RedirectToAction("Index", "Orders");
+                            return RedirectToAction("Index", "Client");
                         }
                     }
                     else
@@ -58,7 +58,7 @@ namespace CEExpress_CapstonePrototype.Controllers
                         if (response.IsSuccessStatusCode)
                         {
                             ViewBag.Message = "Success";
-                            return RedirectToAction("Index", "Orders");
+                            return RedirectToAction("Index", "Client");
                         }
                         else
                         {
@@ -82,7 +82,7 @@ namespace CEExpress_CapstonePrototype.Controllers
         public ActionResult Logout()
         {
             FormsAuthentication.SignOut();
-            return RedirectToAction("Login", "Clients");
+            return RedirectToAction("Login", "Client");
         }
     }
 }
