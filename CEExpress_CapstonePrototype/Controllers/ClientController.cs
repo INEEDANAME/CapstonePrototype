@@ -27,6 +27,26 @@ namespace CEExpress_CapstonePrototype.Controllers
             return View();
         }
 
+        [Authorize]
+        public ActionResult SubmitNewOrder()
+        {
+            return View();
+        }
+        
+        [Authorize]
+        public ActionResult Reports()
+        {
+            return View();
+        }
+
+        [Authorize]
+        public ActionResult TrackOrder()
+        {
+            return View();
+        }
+
+        
+
 
 
        

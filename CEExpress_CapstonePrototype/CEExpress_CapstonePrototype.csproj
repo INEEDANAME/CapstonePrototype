@@ -199,6 +199,9 @@
     <Content Include="Views\Login\Login.cshtml" />
     <Content Include="Views\Client\Index.cshtml" />
     <Content Include="Views\Client\OrderPage.cshtml" />
+    <Content Include="Views\Client\SubmitNewOrder.cshtml" />
+    <Content Include="Views\Client\Reports.cshtml" />
+    <Content Include="Views\Client\TrackOrder.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
