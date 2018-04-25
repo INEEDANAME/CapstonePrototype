@@ -10,7 +10,12 @@
         .navbar-collapse .nav li:hover {
             background: #fc8f38;
         }
+        .nav li:active {
+            background: #fc8f38;
+        }
             
+       
+      
       
         }
 
@@ -18,31 +23,43 @@
 </head>
 <body>
     <header>
-        <div class="navbar navbar-inverse navbar-fixed-top" style="background:#11147f">
-            <div class="container">
-                <div class="navbar-header" style="display:block; text-transform: uppercase;text-decoration: none; 	border-bottom:1px solid #e8e8e8;
-;" ;
 
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" >
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <div id="pic">
-                    @Html.ActionLink("Capstone Prototype", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+        <div class="navbar navbar-default" >
+
+            <div class="container">
+                <div class="navbar-header" style="display:flex; text-transform: uppercase;text-decoration: none; 	 solid #e8e8e8;"></div>
+
+
+                    <div class="logo" style="position:absolute; margin-left:-60px; "><a href="#"><img src="~/Content/images/logo.png" style="width:150px; height:50px;" alt=""></a></div>
+                    <div class="top_right_area"style="position:relative; ">
+                        <div class="inner_top" style="border-color:red; border: 2px;">
+
+                            <div class="track_box" style=" float:right; padding:11px;">
+                                <form>
+                                    <input type="text" onfocus="if(this.value=='Enter Trip Number') this.value='';" onblur="if(this.value=='') this.value='Enter Trip Number';" name="Enter Trip Number" value="Enter Trip Number" style="text-align: center">
+
+                                    <input type="submit" value="Track" style="background-color:#11147f; color:white; border-radius:7px; ">
+                                </form>
+                            </div>
+                            <div class="fuel_sercharge" style=" float:right; padding:15px;"><a href="http://ceexpress.ca/?page_id=312" style="position:relative;  background-color:#11147f; color:white; padding:5px; border-radius:7px; ">Fuel Surcharge</a></div>
+                            <div class="Log_in" style=" float:right; padding-top:15px; padding-bottom:15px; padding-left:15px; padding-right:60px;"><a href="http://ceexpress.ca/?page_id=312" style="position:relative;  background-color:#11147f; color:white; padding:5px; border-radius:10px; ">Log In</a></div>
+
+                        </div>
+                    </div>
                 </div>
 
 
-            </div>
-                <div class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav" id="navigation">
-                        <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                        <li>@Html.ActionLink("Account","Index", "Client")</li>
-                        <li>@Html.ActionLink("Orders", "OrderPage", "Client")</li>
-                        <li>@Html.ActionLink("LogIn", "Login", "Login")</li>
+            
+               
+                <div class="navbar-collapse collapse" style="background:#11147f; ">
+                    <ul class="nav navbar-nav" id="navigation" >
+                        <li>@Html.ActionLink("Home", "Index", "Home", new { @style = "color:white" })</li>
+                        <li>@Html.ActionLink("Account", "", "", new { @style = "color:white" })</li>
+                        <li>@Html.ActionLink("Your Orders", "Index", "Orders", new { @style = "color:white" })</li>
+                        <li>@Html.ActionLink("LogIn", "Login", "Login", new { @style = "color:white" })</li>
 
-                        <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                        <li>@Html.ActionLink("About us", "About", "Home")</li>
+                        <li>@Html.ActionLink("Contact", "Contact", "Home", new { @style = "color:white" })</li>
+                        <li>@Html.ActionLink("About us", "About", "Home", new { @style = "color:white" })</li>
                     </ul>
                 </div>
             </div>
