@@ -6,24 +6,26 @@ using System.Web.Mvc;
 
 namespace CEExpress_CapstonePrototype.Controllers
 {
-    public class HomeController : Controller
+    public class ManagementController : Controller
     {
-            public ActionResult Index()
+        // GET: Management
+        public ActionResult Index()
         {
             return View();
         }
 
-        public ActionResult About()
+        public ActionResult ManagementReport()
         {
-            ViewBag.Message = "Your application description page.";
-
             return View();
         }
 
-        public ActionResult Contact()
+        public ActionResult Analytics()
         {
-            ViewBag.Message = "Your contact page.";
+            return View()
+        }
 
+        public ActionResult ClientReports()
+        {
             return View();
         }
     }

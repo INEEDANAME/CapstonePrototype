@@ -1,0 +1,121 @@
+﻿@model CEExpress_CapstonePrototype.Models.userLogin
+<div id="full">
+@{
+    ViewBag.Title = "Login";
+}
+
+<h2 style="text-align:center">Login</h2>
+
+<head>
+
+    <style>
+
+        #signupbro {
+            float: left;
+            width: 569px;
+            height: 400px;
+            padding:25px;
+        }
+        #loginbro{
+            
+            float: right;   
+            width:569px;
+            height:400px;
+            padding-left:40px;
+            padding-top:25px;
+            padding-bottom:25px;
+            padding-right:25px;
+        }
+
+
+        a.col-md-offset-2 {
+            background-color: #11147f;
+        }
+        #full {
+         
+        }
+        body {
+            background-color: #F0F1F7;
+        }
+       
+
+    </style>
+
+
+</head>
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal" id="signupbro">
+         <h4 style="font-family:Arial, Helvetica, sans-serif; font-size:24px;">Thinking of Signing up? Here's How</h4>
+
+        <hr />
+
+        <div class="form-group">
+            <h2 style="font-family:Arial, Helvetica, sans-serif; font-size:20px">To Sign up Download the PDF File given below and follow all the steps. Once all the steps are completed, C&E Express will set up your account and you will be eligible for putting in orders!</h2>
+
+        </div>
+
+        <hr />
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10" style=" padding-left:120px; ">
+                <input type="submit" value="Sign up" class="btn btn-default" style="background-color:#fc8f38; color:white;" />
+            </div>
+            <div id="pwd forgot"></div>
+        </div>
+
+
+
+
+
+
+
+    </div>
+    <div class="form-horizontal" id="loginbro">
+     <h4 style="font-family:Arial, Helvetica, sans-serif; font-size:24px;">Already have a log in? Log in below!</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.AccountNumber, htmlAttributes: new { @class = "control-label col-md-2", @style = "background-color:#11147f; color:white;  " })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.AccountNumber, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.AccountNumber, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label col-md-2", @style = "background-color:#11147f; color:white;" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.RememberMe, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <div class="checkbox">
+                    @Html.EditorFor(model => model.RememberMe)
+                    @Html.ValidationMessageFor(model => model.RememberMe, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10" style=" padding-left:120px; ">
+                <input type="submit" value="Log In" class="btn btn-default" style="background-color:#fc8f38; color:white;" />
+            </div>
+            <div id="pwd forgot"></div>
+        </div>
+    </div>
+    <div>@Html.Raw(ViewBag.Message)</div>
+
+
+    }
+
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }
